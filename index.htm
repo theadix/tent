@@ -1,108 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Tent House</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="logo4.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <title>Aditya Tent House - Premium Event Decorations & Party Services</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><defs><pattern id="tent" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="%231a202c"/><rect width="100%" height="100%" fill="url(%23tent)"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .booking-form {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #f59e0b;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
 </head>
-
-<body>
-    <header class="text-gray-600 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-                <a class="mr-5 hover:text-gray-900">First Link</a>
-                <a class="mr-5 hover:text-gray-900">Second Link</a>
-                <a class="mr-5 hover:text-gray-900">Third Link</a>
-                <a class="hover:text-gray-900">Fourth Link</a>
-            </nav>
-            <a
-                class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                    viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="ml-3 text-xl">Aditya Tent House</span>
-            </a>
-            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-                <button
-                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="booknow.htm">Book
-                        Now</a>
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-                <div class="sm:w-1/2 mb-10 px-4">
-                    <div class="rounded-lg h-640 overflow-hidden">
-                        <!-- <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1201x501"> -->
-                        <!-- <iframe width="420" height="315"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe> -->
-
-                        <video width="390" height="600" controls>
-                            <source src="07_02_25. Sitamarhi work.mp4" type="video/mp4">
-                            <source src="movie.ogg" type="video/ogg">
-                          Your browser does not support the video tag.
-                          </video>
-
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold gradient-text">Aditya Tent House</h1>
                     </div>
-                    <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Sitamarhi Work</h2>
-                    <!-- <p class="leading-relaxed text-base">.</p> -->
-                    <button
-                        class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"><a
-                            href="https://www.youtube.com/shorts/FtZdJb2MM4s" target="_blank">Watch on Youtube</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-yellow-600 px-3 py-2">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-yellow-600 px-3 py-2">Services</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-yellow-600 px-3 py-2">Gallery</a>
+                    <a href="#booking" class="nav-link text-gray-700 hover:text-yellow-600 px-3 py-2">Book Now</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-yellow-600 px-3 py-2">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
-                <!-- <div class="sm:w-1/2 mb-10 px-4">
-                    <div class="rounded-lg h-64 overflow-hidden">
-                        <img alt="content" class="object-cover object-center h-full w-full"
-                            src="https://dummyimage.com/1202x502">
-                    </div>
-                    <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">The Catalyzer</h2>
-                    <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest
-                        cornhole brunch, slow-carb neutra irony.</p>
-                    <button
-                        class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
-                </div> -->
-            <div class="sm:w-1/2 mb-10 px-4">
-                <div class="rounded-lg h-640 overflow-hidden">
-                    <!-- <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1201x501"> -->
-                    <!-- <iframe width="420" height="315"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                    </iframe> -->
-
-                    <video width="390" height="600" controls>
-                        <source src="videoplayback.mp4" type="video/mp4">
-                        <source src="movie.ogg" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-
-                </div>
-                <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"></h2>
-                <!-- <p class="leading-relaxed text-base">.</p> -->
-                <button
-                    class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"><a
-                        href="https://www.youtube.com/shorts/XyzabjlC_cU" target="_blank">Watch on Youtube</a>
-                </button>
             </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+                <a href="#home" class="block px-3 py-2 text-gray-700">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700">Gallery</a>
+                <a href="#booking" class="block px-3 py-2 text-gray-700">Book Now</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Transform Your Special Moments
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                    Premium tent house and decoration services for weddings, parties, and all your special events. Creating unforgettable memories with elegant designs.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex justify-center">
+                    <a href="#booking" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-calendar-alt mr-2"></i>Book Your Event
+                    </a>
+                    <a href="#gallery" class="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full text-lg font-semibold transition duration-300">
+                        <i class="fas fa-images mr-2"></i>View Our Work
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-</body>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    We offer comprehensive decoration and tent services to make your events truly spectacular
+                </p>
+            </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Wedding Decorations -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-2xl text-pink-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Wedding Decorations</h3>
+                        <p class="text-gray-600 mb-4">
+                            Elegant mandap setups, floral arrangements, lighting, and complete wedding venue decoration services.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Mandap & Stage Setup</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Floral Arrangements</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Lighting & Draping</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Entrance Decoration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Party Decorations -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Party Decorations</h3>
+                        <p class="text-gray-600 mb-4">
+                            Birthday parties, anniversaries, corporate events, and casual celebrations with themed decorations.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Themed Decorations</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Balloon Arrangements</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Table Settings</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Photo Booths</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tent Services -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-home text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Tent Rentals</h3>
+                        <p class="text-gray-600 mb-4">
+                            Premium quality tents in various sizes for outdoor events, weddings, and corporate functions.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Wedding Tents</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Party Tents</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Corporate Tents</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Weather Protection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Event Planning -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-check text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Event Planning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Complete event management from planning to execution, ensuring every detail is perfect.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Event Coordination</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Vendor Management</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Timeline Planning</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>On-site Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Catering Setup -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Catering Setup</h3>
+                        <p class="text-gray-600 mb-4">
+                            Professional catering area setup with proper serving stations and dining arrangements.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Buffet Setup</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Dining Tables</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Service Equipment</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Kitchen Facilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Audio Visual -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-music text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Audio Visual</h3>
+                        <p class="text-gray-600 mb-4">
+                            Professional sound systems, lighting, and audio-visual equipment for all types of events.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Sound Systems</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>LED Lighting</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Projection Systems</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>DJ Equipment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Previous Work</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Take a look at some of our recent decoration projects and see the magic we create for our clients
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/BKMP4Vv1RN8" title="Aditya Tent House Work 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Wedding Decoration Setup</h3>
+                        <p class="text-gray-600">Beautiful wedding decoration with elegant draping and floral arrangements</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/XyzabjlC_cU" title="Aditya Tent House Work 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Event Decoration</h3>
+                        <p class="text-gray-600">Stunning event setup with professional lighting and themed decorations</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/FtZdJb2MM4s" title="Aditya Tent House Work 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Party Setup</h3>
+                        <p class="text-gray-600">Creative party decoration with vibrant colors and modern design elements</p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/nw2cMmpuuy0" title="Aditya Tent House Work 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete Event Setup</h3>
+                        <p class="text-gray-600">Full-service event decoration with tent, lighting, and complete venue transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 booking-form">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Book Your Event</h2>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+                    Ready to make your event unforgettable? Fill out the form below and we'll get back to you within 24 hours
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Enter your phone number">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Enter your email address">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Event Date *</label>
+                            <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Event Type *</label>
+                            <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="casual">Casual Party</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Expected Guests</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                                <option value="">Select guest count</option>
+                                <option value="1-50">1-50 guests</option>
+                                <option value="51-100">51-100 guests</option>
+                                <option value="101-200">101-200 guests</option>
+                                <option value="201-500">201-500 guests</option>
+                                <option value="500+">500+ guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Event Location *</label>
+                        <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Enter event venue/location">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Services Required</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Tent Rental</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Decorations</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Lighting</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Sound System</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Catering Setup</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">Full Planning</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Additional Requirements</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent" placeholder="Please describe any specific requirements, themes, or special requests for your event"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                            <option value="">Select your budget range</option>
+                            <option value="under-25000">Under ₹25,000</option>
+                            <option value="25000-50000">₹25,000 - ₹50,000</option>
+                            <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                            <option value="100000-200000">₹1,00,000 - ₹2,00,000</option>
+                            <option value="over-200000">Over ₹2,00,000</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-4 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Submit Booking Request
+                        </button>
+                        <p class="text-sm text-gray-600 mt-4">We'll contact you within 24 hours to discuss your event details</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to start planning your perfect event? Contact us today for a free consultation
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Phone -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-300">+91 98765 43210</p>
+                    <p class="text-gray-300">+91 87654 32109</p>
+                </div>
+
+                <!-- Email -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-300">info@adityatenthouse.com</p>
+                    <p class="text-gray-300">booking@adityatenthouse.com</p>
+                </div>
+
+                <!-- Address -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Visit Us</h3>
+                    <p class="text-gray-300">123 Event Street</p>
+                    <p class="text-gray-300">City, State - 123456</p>
+                </div>
+
+                <!-- Hours -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Business Hours</h3>
+                    <p class="text-gray-300">Mon - Sat: 9AM - 8PM</p>
+                    <p class="text-gray-300">Sunday: 10AM - 6PM</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-yellow-600 text-2xl transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-600 text-2xl transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-600 text-2xl transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-600 text-2xl transition duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-4">Aditya Tent House</h3>
+                <p class="text-gray-400 mb-4">Creating unforgettable moments with premium event decoration services</p>
+                <div class="border-t border-gray-800 pt-4">
+                    <p class="text-gray-500 text-sm">
+                        © 2024 Aditya Tent House. All rights reserved. | Designed with ❤️ for memorable events
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after clicking
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your booking request! We will contact you within 24 hours to discuss your event details.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-opacity-95');
+            } else {
+                nav.classList.remove('bg-opacity-95');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and other elements
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
 </html>
